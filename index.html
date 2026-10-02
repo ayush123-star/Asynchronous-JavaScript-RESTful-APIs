@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ Weather Dashboard</h1>
+            <p class="subtitle">Get real-time weather data for any city</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by city name..."
+                    aria-label="Search for a city"
+                >
+                <button id="searchBtn" aria-label="Search weather">Search</button>
+            </div>
+            <div id="loadingSpinner" class="spinner hidden"></div>
+        </div>
+
+        <div id="errorContainer" class="error-container hidden"></div>
+
+        <div id="weatherContainer" class="weather-container">
+            <div class="weather-card main-card hidden">
+                <h2 id="cityName"></h2>
+                <div class="temperature-display">
+                    <span id="temperature" class="temp"></span>
+                    <span class="unit">°C</span>
+                </div>
+                <p id="weatherDesc" class="description"></p>
+                <div class="weather-grid">
+                    <div class="weather-item">
+                        <span class="label">Humidity</span>
+                        <span id="humidity" class="value">--%</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Wind Speed</span>
+                        <span id="windSpeed" class="value">-- km/h</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Pressure</span>
+                        <span id="pressure" class="value">-- hPa</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">Feels Like</span>
+                        <span id="feelsLike" class="value">--°C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Data provided by <a href="https://open-meteo.com/" target="_blank">Open-Meteo</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
